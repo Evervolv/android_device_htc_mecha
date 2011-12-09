@@ -76,20 +76,38 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/mecha/overlay
 
 # Permission xmls
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml
+    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
 
 # config xml file
 PRODUCT_COPY_FILES += \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml \
-    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
+    device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml
+#    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
+    librs_jni \
     lights.mecha \
-    sensors.mecha
+    sensors.mecha \
+    gps.mecha \
+    libOmxCore \
+    libOmxVidEnc \
+    com.android.future.usb.accessory
+#    audio.a2dp.default \
+#    audio.primary.msm7x30 \
+#    audio_policy.msm7x30 \
+#    gralloc.msm7x30 \
+#    copybit.msm7x30 \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -102,6 +120,10 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
     device/htc/mecha/keylayout/mecha-keypad-v0.kl:system/usr/keylayout/mecha-keypad-v0.kl \
     device/htc/mecha/keylayout/mecha-keypad.kl:system/usr/keylayout/mecha-keypad.kl
+
+# Touchscreen
+PRODUCT_COPY_FILES += \
+    device/htc/mecha/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -208,9 +230,8 @@ $(call inherit-product, device/htc/mecha/media_a1026.mk)
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
-$(call inherit-product, build/target/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_BRAND := HTC
 PRODUCT_NAME := htc_mecha
 PRODUCT_DEVICE := mecha
