@@ -68,11 +68,11 @@ on boot
     chown bluetooth bluetooth /sys/module/board_mecha/parameters/bdaddr
     setprop ro.bt.bdaddr_path /sys/module/board_mecha/parameters/bdaddr
 
-	# for wireless modem
-	chown system system /sys/module/serial/parameters/modem_enabled
-	chown system system /dev/ttyHSUSB0
-	chown system system /dev/ttySA0
-	chown system system /dev/smd9
+    chown system system /sys/module/serial/parameters/modem_enabled
+    chown bluetooth bluetooth /dev/ttyHS0
+    chmod 0770 /dev/ttyHS0
+    chown system system /dev/ttySA0
+    chown system system /dev/smd9
 
     # 9k modem
     chown system system /sys/module/msm72k_udc/parameters/mdm_port_enabled
@@ -89,20 +89,24 @@ service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
 #   after setting up the capabilities required for WEXT
 #   user wifi
 #   group wifi inet keystore
+    class main
     socket wpa_eth0 dgram 660 wifi wifi
     disabled
     oneshot
 
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
+    class main
     disabled
     oneshot
 
 service iprenew_eth0 /system/bin/dhcpcd -n
+    class main
     disabled
     oneshot
 
 # compass/accelerometer daemon
 service akmd /system/bin/akmd
+    class main
     user compass
     group compass misc input
 
@@ -114,6 +118,7 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
     --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+    class main
     user bluetooth
     group bluetooth net_bt_admin
     disabled
