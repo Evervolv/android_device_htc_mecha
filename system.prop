@@ -2,9 +2,6 @@
 # system.prop for mecha
 #
 
-#Temporarily turn off hw accel.
-ro.config.disable_hw_accel=true
-
 ro.sf.lcd_density=240
 
 debug.fb.rgb565 = 0

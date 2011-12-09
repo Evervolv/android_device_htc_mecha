@@ -92,8 +92,8 @@ PRODUCT_COPY_FILES += \
 # config xml file
 PRODUCT_COPY_FILES += \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml
-#    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
+    device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml \
+    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -102,11 +102,11 @@ PRODUCT_PACKAGES += \
     gps.mecha \
     libOmxCore \
     libOmxVidEnc \
+    gralloc.msm7x30 \
     com.android.future.usb.accessory
 #    audio.a2dp.default \
 #    audio.primary.msm7x30 \
 #    audio_policy.msm7x30 \
-#    gralloc.msm7x30 \
 #    copybit.msm7x30 \
 
 # Keylayouts
