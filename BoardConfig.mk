@@ -25,13 +25,21 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-# inherit from common msm7x30 device
--include device/htc/msm7x30-common/BoardConfigCommon.mk
-
 # inherit from the proprietary version
 -include vendor/htc/mecha/BoardConfigVendor.mk
 
+TARGET_NO_BOOTLOADER := true
+
+TARGET_BOARD_PLATFORM := msm7x30
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_BOOTLOADER_BOARD_NAME := mecha
+
+TARGET_SPECIFIC_HEADER_PATH := device/htc/mecha/include
 
 # Use stock libril for now
 TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
@@ -39,16 +47,55 @@ BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
 BOARD_HAS_EXTRA_SYS_PROPS := true
 USE_IPV6_ROUTE := true
 
-# Additional Camera hacks for mecha
-BOARD_HAVE_HTC_FFC := true
-BOARD_USE_REVERSE_FFC := true
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WLAN_DEVICE                := bcm4329
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
+WIFI_DRIVER_MODULE_NAME          := "bcm4329"
 
-# Hack for improper scaling.
-BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_PREBUILT_LIBAUDIO := true
+
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
+
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+#BOARD_USE_BROADCOM_FM_VOLUME_HACK := true
+
+BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
+
+#BOARD_CAMERA_USE_GETBUFFERINFO := true
+# Additional Camera hacks for mecha
+#BOARD_HAVE_HTC_FFC := true
+#BOARD_USE_REVERSE_FFC := true
 
 # GPS Defines
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
+
+BOARD_EGL_CFG := device/htc/mecha/prebuilt/lib/egl/egl.cfg
+BOARD_USES_OVERLAY := true
+#USE_OPENGL_RENDERER := true
+#BOARD_USES_HGL := true
+
+COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS
+
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_LIBS := true
+#BOARD_USES_QCOM_LIBRPC := true
+#BOARD_USES_QCOM_GPS := true
+#BOARD_USE_QCOM_PMEM := true
+
+#BOARD_OVERLAY_FORMAT_YCbCr_420_SP := true
+
+# Hack for improper scaling.
+BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 
 # cat /proc/emmc
 # dev:        size     erasesize name
@@ -68,21 +115,15 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 4194304
 BOARD_FLASH_BLOCK_SIZE := 262144
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-TARGET_PREBUILT_KERNEL := device/htc/mecha/kernel
+TARGET_PREBUILT_KERNEL := device/htc/mecha/prebuilt/root/kernel
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_KERNEL_CMDLINE := no_console_suspend=1
 BOARD_KERNEL_BASE := 0x05200000
 BOARD_PAGE_SIZE := 4096
 
-#Enable HW acceleration hack
-USE_OPENGL_RENDERER := true
-BOARD_NO_RGBX_8888 := true
-BOARD_USES_OVERLAY := true
-COMMON_GLOBAL_CFLAGS += -DBOARD_GL_OES_EGL_IMG_EXTERNAL_HACK
-
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/htc/mecha/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING:= device/htc/mecha/recovery_ui.c
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2

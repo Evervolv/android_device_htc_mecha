@@ -16,18 +16,12 @@
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/gps.conf:system/etc/gps.conf
-
-## (1) First, the most specific values, i.e. the aspects that are specific to GSM
+    device/htc/mecha/prebuilt/etc/gps.conf:system/etc/gps.conf
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/init.mecha.rc:root/init.mecha.rc \
-    device/htc/mecha/ueventd.mecha.rc:root/ueventd.mecha.rc
+    device/htc/mecha/prebuilt/root/init.mecha.rc:root/init.mecha.rc \
+    device/htc/mecha/prebuilt/root/ueventd.mecha.rc:root/ueventd.mecha.rc
 
-## (2) Also get non-open-source GSM-specific aspects if available
-$(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
-
-## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.oem.ecclist=112,911 \
     ro.ril.enable.a52=0 \
@@ -91,9 +85,12 @@ PRODUCT_COPY_FILES += \
 
 # config xml file
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml \
-    device/htc/msm7x30-common/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/mecha/prebuilt/etc/voicemail-conf.xml:system/etc/voicemail-conf.xml \
+    device/htc/mecha/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
+    device/htc/mecha/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
+
+PRODUCT_COPY_FILES += \
+    device/htc/mecha/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 PRODUCT_PACKAGES += \
     librs_jni \
@@ -102,28 +99,29 @@ PRODUCT_PACKAGES += \
     gps.mecha \
     libOmxCore \
     libOmxVidEnc \
+    audio.a2dp.default \
+    audio.primary.msm7x30 \
+    audio_policy.msm7x30 \
     gralloc.msm7x30 \
+    overlay.default \
     com.android.future.usb.accessory
-#    audio.a2dp.default \
-#    audio.primary.msm7x30 \
-#    audio_policy.msm7x30 \
 #    copybit.msm7x30 \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
-    device/htc/mecha/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
-    device/htc/mecha/keychars/mecha-keypad.kcm.bin:system/usr/keychars/mecha-keypad.kcm.bin \
-    device/htc/mecha/keychars/mecha-keypad-v0.kcm.bin:system/usr/keychars/mecha-keypad-v0.kcm.bin \
-    device/htc/mecha/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/htc/mecha/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/mecha/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/htc/mecha/keylayout/mecha-keypad-v0.kl:system/usr/keylayout/mecha-keypad-v0.kl \
-    device/htc/mecha/keylayout/mecha-keypad.kl:system/usr/keylayout/mecha-keypad.kl
+    device/htc/mecha/prebuilt/usr/keychars/qwerty2.kcm.bin:system/usr/keychars/qwerty2.kcm.bin \
+    device/htc/mecha/prebuilt/usr/keychars/qwerty.kcm.bin:system/usr/keychars/qwerty.kcm.bin \
+    device/htc/mecha/prebuilt/usr/keychars/mecha-keypad.kcm.bin:system/usr/keychars/mecha-keypad.kcm.bin \
+    device/htc/mecha/prebuilt/usr/keychars/mecha-keypad-v0.kcm.bin:system/usr/keychars/mecha-keypad-v0.kcm.bin \
+    device/htc/mecha/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/mecha/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/mecha/prebuilt/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/mecha/prebuilt/usr/keylayout/mecha-keypad-v0.kl:system/usr/keylayout/mecha-keypad-v0.kl \
+    device/htc/mecha/prebuilt/usr/keylayout/mecha-keypad.kl:system/usr/keylayout/mecha-keypad.kl
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
+    device/htc/mecha/prebuilt/usr/idc/atmel-touchscreen.idc:system/usr/idc/atmel-touchscreen.idc
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -203,16 +201,16 @@ PRODUCT_COPY_FILES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# mecha uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+#Disable HWAccel for now
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.config.disable_hw_accel=true
 
-PRODUCT_COPY_FILES += \
-    device/htc/mecha/vold.fstab:system/etc/vold.fstab
+PRODUCT_LOCALES += en
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/htc/mecha/kernel
+    LOCAL_KERNEL := device/htc/mecha/prebuilt/root/kernel
 else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES += \
@@ -221,19 +219,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
-# common msm7x30 configs
-$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
-
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/mecha/media_a1026.mk)
+
+$(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-PRODUCT_BRAND := HTC
-PRODUCT_NAME := htc_mecha
+
+PRODUCT_NAME := full_mecha
 PRODUCT_DEVICE := mecha
-PRODUCT_MODEL := HTC ThunderBolt
-PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := Full Android on Mecha
