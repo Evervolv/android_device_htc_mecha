@@ -41,6 +41,9 @@ TARGET_BOOTLOADER_BOARD_NAME := mecha
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/mecha/include
 
+# Allow compatibility with old touchscreens
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+
 # Use stock libril for now
 TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
 BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
