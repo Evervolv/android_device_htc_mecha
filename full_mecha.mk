@@ -125,78 +125,78 @@ PRODUCT_COPY_FILES += \
 
 # Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
-    device/htc/mecha/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
-    device/htc/mecha/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
-    device/htc/mecha/firmware/default.acdb:system/etc/firmware/default.acdb \
-    device/htc/mecha/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
-    device/htc/mecha/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
-    device/htc/mecha/firmware/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
-    device/htc/mecha/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
-    device/htc/mecha/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
-    device/htc/mecha/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/mecha/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
+    device/htc/mecha/prebuilt/etc/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
+    device/htc/mecha/prebuilt/etc/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
+    device/htc/mecha/prebuilt/etc/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
+    device/htc/mecha/prebuilt/etc/firmware/default.acdb:system/etc/firmware/default.acdb \
+    device/htc/mecha/prebuilt/etc/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
+    device/htc/mecha/prebuilt/etc/firmware/default_mfg.acdb:system/etc/firmware/default_mfg.acdb \
+    device/htc/mecha/prebuilt/etc/firmware/mp2_dec_mc.fw:system/etc/firmware/mp2_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
+    device/htc/mecha/prebuilt/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
+    device/htc/mecha/prebuilt/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
-    device/htc/mecha/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
-    device/htc/mecha/dsp/AIC3254_REG_DualMicXD01.csv:system/etc/AIC3254_REG_DualMicXD01.csv \
-    device/htc/mecha/dsp/AIC3254_REG_DualMicXD02.csv:system/etc/AIC3254_REG_DualMicXD02.csv \
-    device/htc/mecha/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
-    device/htc/mecha/dsp/AudioBTID.csv:system/etc/AudioBTID.csv \
-    device/htc/mecha/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
-    device/htc/mecha/dsp/CodecDSPID_BCLK.txt:system/etc/CodecDSPID_BCLK.txt \
-    device/htc/mecha/dsp/HP_Audio.csv:system/etc/HP_Audio.csv \
-    device/htc/mecha/dsp/HP_Video.csv:system/etc/HP_Video.csv \
-    device/htc/mecha/dsp/SPK_Combination.csv:system/etc/SPK_Combination.csv \
-    device/htc/mecha/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
-    device/htc/mecha/dsp/soundimage/Sound_Bass_Booster.txt:system/etc/soundimage/Sound_Bass_Booster.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Blues.txt:system/etc/soundimage/Sound_Blues.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Classical.txt:system/etc/soundimage/Sound_Classical.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Country.txt:system/etc/soundimage/Sound_Country.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_A_HP.txt:system/etc/soundimage/Sound_Dolby_A_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_A_SPK.txt:system/etc/soundimage/Sound_Dolby_A_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_HP.txt:system/etc/soundimage/Sound_Dolby_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_Spk.txt:system/etc/soundimage/Sound_Dolby_Spk.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_V_HP.txt:system/etc/soundimage/Sound_Dolby_V_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dolby_V_SPK.txt:system/etc/soundimage/Sound_Dolby_V_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dualmic.txt:system/etc/soundimage/Sound_Dualmic.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dualmic_EP.txt:system/etc/soundimage/Sound_Dualmic_EP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Dualmic_SPK.txt:system/etc/soundimage/Sound_Dualmic_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Jazz.txt:system/etc/soundimage/Sound_Jazz.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Latin.txt:system/etc/soundimage/Sound_Latin.txt \
-    device/htc/mecha/dsp/soundimage/Sound_New_Age.txt:system/etc/soundimage/Sound_New_Age.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_BCLK.txt:system/etc/soundimage/Sound_Original_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_Recording_BCLK.txt:system/etc/soundimage/Sound_Original_Recording_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_HP_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_HP_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_REC_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_REC_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Phone_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Piano.txt:system/etc/soundimage/Sound_Piano.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Pop.txt:system/etc/soundimage/Sound_Pop.txt \
-    device/htc/mecha/dsp/soundimage/Sound_R_B.txt:system/etc/soundimage/Sound_R_B.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Recording_BCLK.txt:system/etc/soundimage/Sound_Recording_BCLK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Rock.txt:system/etc/soundimage/Sound_Rock.txt \
-    device/htc/mecha/dsp/soundimage/Sound_SRS_A_HP.txt:system/etc/soundimage/Sound_SRS_A_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_SRS_A_SPK.txt:system/etc/soundimage/Sound_SRS_A_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_SRS_V_HP.txt:system/etc/soundimage/Sound_SRS_V_HP.txt \
-    device/htc/mecha/dsp/soundimage/Sound_SRS_V_SPK.txt:system/etc/soundimage/Sound_SRS_V_SPK.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Treble_Booster.txt:system/etc/soundimage/Sound_Treble_Booster.txt \
-    device/htc/mecha/dsp/soundimage/Sound_Vocal_Booster.txt:system/etc/soundimage/Sound_Vocal_Booster.txt
+    device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
+    device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
+    device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG_DualMicXD01.csv:system/etc/AIC3254_REG_DualMicXD01.csv \
+    device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG_DualMicXD02.csv:system/etc/AIC3254_REG_DualMicXD02.csv \
+    device/htc/mecha/prebuilt/etc/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/mecha/prebuilt/etc/dsp/AudioBTID.csv:system/etc/AudioBTID.csv \
+    device/htc/mecha/prebuilt/etc/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
+    device/htc/mecha/prebuilt/etc/dsp/CodecDSPID_BCLK.txt:system/etc/CodecDSPID_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/HP_Audio.csv:system/etc/HP_Audio.csv \
+    device/htc/mecha/prebuilt/etc/dsp/HP_Video.csv:system/etc/HP_Video.csv \
+    device/htc/mecha/prebuilt/etc/dsp/SPK_Combination.csv:system/etc/SPK_Combination.csv \
+    device/htc/mecha/prebuilt/etc/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Bass_Booster.txt:system/etc/soundimage/Sound_Bass_Booster.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Blues.txt:system/etc/soundimage/Sound_Blues.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Classical.txt:system/etc/soundimage/Sound_Classical.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Country.txt:system/etc/soundimage/Sound_Country.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_A_HP.txt:system/etc/soundimage/Sound_Dolby_A_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_A_SPK.txt:system/etc/soundimage/Sound_Dolby_A_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_HP.txt:system/etc/soundimage/Sound_Dolby_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_Spk.txt:system/etc/soundimage/Sound_Dolby_Spk.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_V_HP.txt:system/etc/soundimage/Sound_Dolby_V_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dolby_V_SPK.txt:system/etc/soundimage/Sound_Dolby_V_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dualmic.txt:system/etc/soundimage/Sound_Dualmic.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dualmic_EP.txt:system/etc/soundimage/Sound_Dualmic_EP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Dualmic_SPK.txt:system/etc/soundimage/Sound_Dualmic_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Jazz.txt:system/etc/soundimage/Sound_Jazz.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Latin.txt:system/etc/soundimage/Sound_Latin.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_New_Age.txt:system/etc/soundimage/Sound_New_Age.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original_BCLK.txt:system/etc/soundimage/Sound_Original_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original_Recording_BCLK.txt:system/etc/soundimage/Sound_Original_Recording_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_HP_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_HP_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_REC_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_REC_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Phone_Original_SPK_BCLK.txt:system/etc/soundimage/Sound_Phone_Original_SPK_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Piano.txt:system/etc/soundimage/Sound_Piano.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Pop.txt:system/etc/soundimage/Sound_Pop.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_R_B.txt:system/etc/soundimage/Sound_R_B.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Recording_BCLK.txt:system/etc/soundimage/Sound_Recording_BCLK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Rock.txt:system/etc/soundimage/Sound_Rock.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_SRS_A_HP.txt:system/etc/soundimage/Sound_SRS_A_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_SRS_A_SPK.txt:system/etc/soundimage/Sound_SRS_A_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_SRS_V_HP.txt:system/etc/soundimage/Sound_SRS_V_HP.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_SRS_V_SPK.txt:system/etc/soundimage/Sound_SRS_V_SPK.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Treble_Booster.txt:system/etc/soundimage/Sound_Treble_Booster.txt \
+    device/htc/mecha/prebuilt/etc/dsp/soundimage/Sound_Vocal_Booster.txt:system/etc/soundimage/Sound_Vocal_Booster.txt
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -217,7 +217,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/mecha/prebuilt/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/mecha/media_a1026.mk)
