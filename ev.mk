@@ -21,6 +21,7 @@ PRODUCT_VERSION_DEVICE_SPECIFIC := p1
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Thunderbolt\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest ROM at evervolv.com\n------------------------------------------------\n"
 
 #PRODUCT_PACKAGES += \
+#    Stk \
 #    Camera
 
 # Copy compatible prebuilt files
