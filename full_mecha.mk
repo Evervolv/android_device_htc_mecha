@@ -207,6 +207,10 @@ ADDITIONAL_BUILD_PROPERTIES += \
 
 PRODUCT_LOCALES += en
 
+# Passion uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/htc/mecha/prebuilt/root/kernel
 else
