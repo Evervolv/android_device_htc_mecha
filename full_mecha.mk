@@ -221,7 +221,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/prebuilt/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/mecha/prebuilt/lib/modules/auth_rpcgss.ko:system/lib/modules/auth_rpcgss.ko \
+    device/htc/mecha/prebuilt/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+    device/htc/mecha/prebuilt/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+    device/htc/mecha/prebuilt/lib/modules/lockd.ko:system/lib/modules/lockd.ko \
+    device/htc/mecha/prebuilt/lib/modules/nfs.ko:system/lib/modules/nfs.ko \
+    device/htc/mecha/prebuilt/lib/modules/rpcsec_gss_krb5.ko:system/lib/modules/rpcsec_gss_krb5.ko \
+    device/htc/mecha/prebuilt/lib/modules/sunrpc.ko:system/lib/modules/sunrpc.ko \
+    device/htc/mecha/prebuilt/lib/modules/tun.ko:system/lib/modules/tun.ko
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/mecha/media_a1026.mk)
