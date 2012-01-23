@@ -12,6 +12,11 @@ on early-fs
 #on early-init
     device mtd@misc 0460 radio diag
 
+    export EXTERNAL_STORAGE /mnt/sdcard
+    mkdir /mnt/sdcard 0000 system system
+    # for backwards compatibility
+    symlink /mnt/sdcard /sdcard
+
 on init
     # double check the perms and set owner
     chown root root /devlog
