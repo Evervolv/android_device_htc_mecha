@@ -1,4 +1,4 @@
-# Inherit AOSP device configuration for inc.
+# Inherit AOSP device configuration for mecha.
 $(call inherit-product, device/htc/mecha/full_mecha.mk)
 
 # Inherit some common evervolv stuff.
@@ -12,7 +12,7 @@ PRODUCT_BRAND := verizon_wwe
 PRODUCT_DEVICE := mecha
 PRODUCT_MODEL := ADR6400L
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=GRJ22 BUILD_FINGERPRINT=verizon_wwe/htc_mecha/mecha/mecha:2.3.4/GRJ22/178661.5:user/release-keys PRIVATE_BUILD_DESC="2.11.605.5 CL178661 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_ID=IMM76L BUILD_FINGERPRINT=verizon-wwe/mecha/mecha:4.0.4/IMM76L/370649.2:user/release-keys PRIVATE_BUILD_DESC="7.00.605.2 CL370649 release-keys"
 
 # Set up the product codename, build version & MOTD.
 PRODUCT_CODENAME := Velox
@@ -20,14 +20,10 @@ PRODUCT_VERSION_DEVICE_SPECIFIC := p1
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Thunderbolt\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest ROM at evervolv.com\n------------------------------------------------\n"
 
-#PRODUCT_PACKAGES += \
-#    Stk \
-#    Camera
+# Hot reboot
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/ev/overlay/hot_reboot
 
 # Copy compatible prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/ev/prebuilt/wvga/media/bootanimation.zip:system/media/bootanimation.zip
-
-# USB
-#ADDITIONAL_DEFAULT_PROPERTIES += persist.sys.usb.config=mass_storage,adb
-#ADDITIONAL_DEFAULT_PROPERTIES += persist.sys.usb.config=mtp,adb

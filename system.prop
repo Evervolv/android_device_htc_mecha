@@ -3,8 +3,8 @@
 #
 
 ro.sf.lcd_density=240
-
 debug.fb.rgb565 = 0
+debug.sf.hw=1
 
 #+from QCT Fusion
 rild.libpath=/system/lib/libril-qc-1.so
@@ -23,7 +23,6 @@ persist.rild.ril.ltedr=0
 persist.rild.ril.ltedrtable=max_retries=infinite,10000
 persist.rild.ril.adminAPN=vzwadmin
 DEVICE_PROVISIONED=1
-debug.sf.hw=1
 persist.radio.agps.mode=6
 
 #
@@ -51,7 +50,7 @@ ro.config.svlte1x=true
 # 8 => CDMA/EVDO/LTE auto mode preferred.
 ro.telephony.default_network=8
 
-wifi.interface=eth0
+wifi.interface=wlan0
 wifi.supplicant_scan_interval=30
 mobiledata.interfaces=rmnet0,rmnet_sdio0,rmnet1,rmnet_sdio1,data,gprs
 
@@ -90,9 +89,6 @@ ro.media.enc.vid.h264.width     = 176,1280
 ro.media.enc.vid.h264.height    = 144,720
 ro.media.enc.vid.h264.bps       = 64000,6000000
 ro.media.enc.vid.h264.fps       = 1,30
-
-# Recording Audio Workaround
-ro.camera.sound.disabled=1
 
 # For FOTA setting (leave empty value to use default)
 ro.htc.checkin.url = http://andchin.htc.com/android/checkin
