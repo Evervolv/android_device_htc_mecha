@@ -31,20 +31,10 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/htc/mecha/BoardConfigVendor.mk
 
-# inherit wifi defines
--include device/htc/msm7x30-common/bcmdhd.mk
-
 TARGET_BOOTLOADER_BOARD_NAME := mecha
 
 # camera fixes
 BOARD_HAVE_HTC_FFC := true
-BOARD_PROVIDES_MEDIA_PROFILES := true
-
-# Lights
-TARGET_PROVIDES_LIBLIGHTS := true
-
-# Adreno
-BOARD_EGL_NEEDS_LEGACY_FB := false
 
 # Use stock libril for now
 TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
@@ -52,24 +42,13 @@ BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
 USE_IPV6_ROUTE := true
 BOARD_HAS_EXTRA_SYS_PROPS := true
 
-BOARD_USES_QCOM_AUDIO_VOIPMUTE := false
-BOARD_USES_QCOM_AUDIO_RESETALL := false
+BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_BASE := 0x05200000
+BOARD_PAGE_SIZE := 4096
+TARGET_KERNEL_CONFIG := evervolv_mecha_defconfig
 
-BOARD_VENDOR_QCOM_AMSS_VERSION := 1200
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-# cat /proc/emmc
-# dev:        size     erasesize name
-# mmcblk0p17: 00040000 00000200 "misc"
-# mmcblk0p21: 0087f400 00000200 "recovery"
-# mmcblk0p22: 00400000 00000200 "boot"
-# mmcblk0p25: 35dffe00 00000200 "system"
-# mmcblk0p28: 001ffe00 00000200 "local"
-# mmcblk0p27: 1b4ffc00 00000200 "cache"
-# mmcblk0p26: a7c00000 00000200 "userdata"
-# mmcblk0p29: 014bfe00 00000200 "devlog"
-# mmcblk0p30: 00040000 00000200 "pdata"
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 585101312
@@ -77,19 +56,9 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 1232072704
 BOARD_BOOTIMAGE_PARTITION_SIZE := 4194304
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
-BOARD_KERNEL_BASE := 0x05200000
-BOARD_PAGE_SIZE := 4096
-BUILD_KERNEL := true
-TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-3.0
-TARGET_KERNEL_CONFIG := evervolv_mecha_defconfig
-
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
-
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file

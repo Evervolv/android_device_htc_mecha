@@ -63,8 +63,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/htc/mecha/prebuilt/etc/voicemail-conf.xml:system/etc/voicemail-conf.xml \
     device/htc/mecha/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
-    device/htc/mecha/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/mecha/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 PRODUCT_COPY_FILES += \
     device/htc/mecha/prebuilt/etc/vold.fstab:system/etc/vold.fstab
@@ -107,10 +105,8 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/prebuilt/etc/dsp/SPK_Combination.csv:system/etc/SPK_Combination.csv \
     device/htc/mecha/prebuilt/etc/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv
 
-# Wifi firmware
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
-
 $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
+
 # htc audio settings
 $(call inherit-product, device/htc/mecha/media_htcaudio.mk)
 $(call inherit-product, device/htc/mecha/media_a1026.mk)
