@@ -100,6 +100,12 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/prebuilt/etc/dsp/SPK_Combination.csv:system/etc/SPK_Combination.csv \
     device/htc/mecha/prebuilt/etc/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv
 
+
+PRODUCT_COPY_FILES += $(shell \
+    find device/htc/mecha/prebuilt/etc/dsp/soundimage -name '*.txt' \
+    | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/etc\/soundimage\/\2/' \
+    | tr '\n' ' ')
+
 $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
 
 # htc audio settings
