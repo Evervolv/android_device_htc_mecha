@@ -55,9 +55,7 @@ PRODUCT_COPY_FILES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    gps.mecha \
-    lights.mecha \
-    sensors.mecha
+    gps.mecha
 
 # config xml file
 PRODUCT_COPY_FILES += \
@@ -74,8 +72,6 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/prebuilt/usr/keychars/mecha-keypad.kcm.bin:system/usr/keychars/mecha-keypad.kcm.bin \
-    device/htc/mecha/prebuilt/usr/keychars/mecha-keypad-v0.kcm.bin:system/usr/keychars/mecha-keypad-v0.kcm.bin \
     device/htc/mecha/prebuilt/usr/keylayout/atmel-touchscreen.kl:system/usr/keylayout/atmel-touchscreen.kl \
     device/htc/mecha/prebuilt/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/mecha/prebuilt/usr/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
@@ -91,7 +87,6 @@ PRODUCT_COPY_FILES += \
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/prebuilt/etc/dsp/audio_policy.conf:system/etc/audio_policy.conf \
     device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
     device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
     device/htc/mecha/prebuilt/etc/dsp/AIC3254_REG_DualMicXD01.csv:system/etc/AIC3254_REG_DualMicXD01.csv \
