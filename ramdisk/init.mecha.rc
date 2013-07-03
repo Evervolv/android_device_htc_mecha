@@ -64,6 +64,12 @@ on boot
     chown system system /sys/class/leds/flashlight/brightness
     chmod 0666 /sys/class/leds/flashlight/brightness
 
+    # Vibrator
+    chown system system /sys/class/timed_output/vibrator/voltage_level
+
+    # Sweep2wake
+    chown system system /sys/android_touch/sweep2wake
+
     # wireless modem
     chown system system /sys/module/serial/parameters/modem_enabled
     chown system system /dev/ttyHSUSB0
